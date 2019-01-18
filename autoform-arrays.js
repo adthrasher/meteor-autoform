@@ -57,7 +57,7 @@ ArrayTracker.prototype.initField = function atInitField(formId, field, ss, docCo
 
 // If this is an array of objects, collect names of object props
   var childKeys = [];
-  if (AutoForm.Utility.getFieldDefinition(ss, field + '.$').type === Object) {
+  if (typeof AutoForm.Utility.getFieldDefinition(ss, field + '.$').type === 'object') {
     childKeys = ss.objectKeys(AutoForm.Utility.makeKeyGeneric(field) + '.$');
 	}
 
@@ -164,7 +164,7 @@ ArrayTracker.prototype.addOneToField = function atAddOneToField(formId, field, s
 
     // If this is an array of objects, collect names of object props
     var childKeys = [];
-    if (AutoForm.Utility.getFieldDefinition(ss, field + '.$').type === Object) {
+    if (typeof AutoForm.Utility.getFieldDefinition(ss, field + '.$').type === 'object') {
       childKeys = ss.objectKeys(AutoForm.Utility.makeKeyGeneric(field) + '.$');
 	  }
 
